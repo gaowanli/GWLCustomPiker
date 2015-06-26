@@ -1,0 +1,434 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AD7216A11B3D9D43006481CB /* Cities.plist in Resources */ = {isa = PBXBuildFile; fileRef = AD7216A01B3D9D43006481CB /* Cities.plist */; };
+		AD7216A71B3D9E3C006481CB /* ProvinceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AD7216A61B3D9E3C006481CB /* ProvinceModel.m */; };
+		AD9D8C8E1B2B191800CD1B0B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AD9D8C8D1B2B191800CD1B0B /* main.m */; };
+		AD9D8C911B2B191800CD1B0B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AD9D8C901B2B191800CD1B0B /* AppDelegate.m */; };
+		AD9D8CA81B2B191800CD1B0B /* GWLCustomPikerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AD9D8CA71B2B191800CD1B0B /* GWLCustomPikerTests.m */; };
+		AD9D8CB61B2B1A6800CD1B0B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD9D8CB51B2B1A6800CD1B0B /* Images.xcassets */; };
+		ADAA458F1B2B22DB007EF77D /* DemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADAA458E1B2B22DB007EF77D /* DemoViewController.m */; };
+		ADAA45931B2B2336007EF77D /* GWLCustomPikerView.m in Sources */ = {isa = PBXBuildFile; fileRef = ADAA45921B2B2336007EF77D /* GWLCustomPikerView.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AD9D8CA21B2B191800CD1B0B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AD9D8C801B2B191800CD1B0B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AD9D8C871B2B191800CD1B0B;
+			remoteInfo = GWLCustomPiker;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		AD7216A01B3D9D43006481CB /* Cities.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Cities.plist; sourceTree = "<group>"; };
+		AD7216A51B3D9E3C006481CB /* ProvinceModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProvinceModel.h; sourceTree = "<group>"; };
+		AD7216A61B3D9E3C006481CB /* ProvinceModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProvinceModel.m; sourceTree = "<group>"; };
+		AD9D8C881B2B191800CD1B0B /* GWLCustomPiker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GWLCustomPiker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD9D8C8C1B2B191800CD1B0B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AD9D8C8D1B2B191800CD1B0B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		AD9D8C8F1B2B191800CD1B0B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		AD9D8C901B2B191800CD1B0B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		AD9D8CA11B2B191800CD1B0B /* GWLCustomPikerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GWLCustomPikerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD9D8CA61B2B191800CD1B0B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AD9D8CA71B2B191800CD1B0B /* GWLCustomPikerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GWLCustomPikerTests.m; sourceTree = "<group>"; };
+		AD9D8CB51B2B1A6800CD1B0B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		ADAA458D1B2B22DB007EF77D /* DemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoViewController.h; sourceTree = "<group>"; };
+		ADAA458E1B2B22DB007EF77D /* DemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoViewController.m; sourceTree = "<group>"; };
+		ADAA45911B2B2336007EF77D /* GWLCustomPikerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GWLCustomPikerView.h; sourceTree = "<group>"; };
+		ADAA45921B2B2336007EF77D /* GWLCustomPikerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GWLCustomPikerView.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AD9D8C851B2B191800CD1B0B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD9D8C9E1B2B191800CD1B0B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AD9D8C7F1B2B191800CD1B0B = {
+			isa = PBXGroup;
+			children = (
+				AD9D8C8A1B2B191800CD1B0B /* GWLCustomPiker */,
+				AD9D8CA41B2B191800CD1B0B /* GWLCustomPikerTests */,
+				AD9D8C891B2B191800CD1B0B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AD9D8C891B2B191800CD1B0B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AD9D8C881B2B191800CD1B0B /* GWLCustomPiker.app */,
+				AD9D8CA11B2B191800CD1B0B /* GWLCustomPikerTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AD9D8C8A1B2B191800CD1B0B /* GWLCustomPiker */ = {
+			isa = PBXGroup;
+			children = (
+				ADAA45901B2B22F8007EF77D /* GWLCustomPiker */,
+				AD9D8C8F1B2B191800CD1B0B /* AppDelegate.h */,
+				AD9D8C901B2B191800CD1B0B /* AppDelegate.m */,
+				AD9D8C8B1B2B191800CD1B0B /* Supporting Files */,
+				ADAA458D1B2B22DB007EF77D /* DemoViewController.h */,
+				ADAA458E1B2B22DB007EF77D /* DemoViewController.m */,
+				AD7216A51B3D9E3C006481CB /* ProvinceModel.h */,
+				AD7216A61B3D9E3C006481CB /* ProvinceModel.m */,
+			);
+			path = GWLCustomPiker;
+			sourceTree = "<group>";
+		};
+		AD9D8C8B1B2B191800CD1B0B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AD7216A01B3D9D43006481CB /* Cities.plist */,
+				AD9D8C8C1B2B191800CD1B0B /* Info.plist */,
+				AD9D8C8D1B2B191800CD1B0B /* main.m */,
+				AD9D8CB51B2B1A6800CD1B0B /* Images.xcassets */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AD9D8CA41B2B191800CD1B0B /* GWLCustomPikerTests */ = {
+			isa = PBXGroup;
+			children = (
+				AD9D8CA71B2B191800CD1B0B /* GWLCustomPikerTests.m */,
+				AD9D8CA51B2B191800CD1B0B /* Supporting Files */,
+			);
+			path = GWLCustomPikerTests;
+			sourceTree = "<group>";
+		};
+		AD9D8CA51B2B191800CD1B0B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AD9D8CA61B2B191800CD1B0B /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		ADAA45901B2B22F8007EF77D /* GWLCustomPiker */ = {
+			isa = PBXGroup;
+			children = (
+				ADAA45911B2B2336007EF77D /* GWLCustomPikerView.h */,
+				ADAA45921B2B2336007EF77D /* GWLCustomPikerView.m */,
+			);
+			path = GWLCustomPiker;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AD9D8C871B2B191800CD1B0B /* GWLCustomPiker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AD9D8CAB1B2B191800CD1B0B /* Build configuration list for PBXNativeTarget "GWLCustomPiker" */;
+			buildPhases = (
+				AD9D8C841B2B191800CD1B0B /* Sources */,
+				AD9D8C851B2B191800CD1B0B /* Frameworks */,
+				AD9D8C861B2B191800CD1B0B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GWLCustomPiker;
+			productName = GWLCustomPiker;
+			productReference = AD9D8C881B2B191800CD1B0B /* GWLCustomPiker.app */;
+			productType = "com.apple.product-type.application";
+		};
+		AD9D8CA01B2B191800CD1B0B /* GWLCustomPikerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AD9D8CAE1B2B191800CD1B0B /* Build configuration list for PBXNativeTarget "GWLCustomPikerTests" */;
+			buildPhases = (
+				AD9D8C9D1B2B191800CD1B0B /* Sources */,
+				AD9D8C9E1B2B191800CD1B0B /* Frameworks */,
+				AD9D8C9F1B2B191800CD1B0B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AD9D8CA31B2B191800CD1B0B /* PBXTargetDependency */,
+			);
+			name = GWLCustomPikerTests;
+			productName = GWLCustomPikerTests;
+			productReference = AD9D8CA11B2B191800CD1B0B /* GWLCustomPikerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AD9D8C801B2B191800CD1B0B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = "高万里";
+				TargetAttributes = {
+					AD9D8C871B2B191800CD1B0B = {
+						CreatedOnToolsVersion = 6.3.1;
+					};
+					AD9D8CA01B2B191800CD1B0B = {
+						CreatedOnToolsVersion = 6.3.1;
+						TestTargetID = AD9D8C871B2B191800CD1B0B;
+					};
+				};
+			};
+			buildConfigurationList = AD9D8C831B2B191800CD1B0B /* Build configuration list for PBXProject "GWLCustomPiker" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AD9D8C7F1B2B191800CD1B0B;
+			productRefGroup = AD9D8C891B2B191800CD1B0B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AD9D8C871B2B191800CD1B0B /* GWLCustomPiker */,
+				AD9D8CA01B2B191800CD1B0B /* GWLCustomPikerTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AD9D8C861B2B191800CD1B0B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD9D8CB61B2B1A6800CD1B0B /* Images.xcassets in Resources */,
+				AD7216A11B3D9D43006481CB /* Cities.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD9D8C9F1B2B191800CD1B0B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AD9D8C841B2B191800CD1B0B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ADAA458F1B2B22DB007EF77D /* DemoViewController.m in Sources */,
+				AD9D8C911B2B191800CD1B0B /* AppDelegate.m in Sources */,
+				AD7216A71B3D9E3C006481CB /* ProvinceModel.m in Sources */,
+				ADAA45931B2B2336007EF77D /* GWLCustomPikerView.m in Sources */,
+				AD9D8C8E1B2B191800CD1B0B /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD9D8C9D1B2B191800CD1B0B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD9D8CA81B2B191800CD1B0B /* GWLCustomPikerTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AD9D8CA31B2B191800CD1B0B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AD9D8C871B2B191800CD1B0B /* GWLCustomPiker */;
+			targetProxy = AD9D8CA21B2B191800CD1B0B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		AD9D8CA91B2B191800CD1B0B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		AD9D8CAA1B2B191800CD1B0B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AD9D8CAC1B2B191800CD1B0B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = GWLCustomPiker/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		AD9D8CAD1B2B191800CD1B0B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = GWLCustomPiker/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		AD9D8CAF1B2B191800CD1B0B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = GWLCustomPikerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GWLCustomPiker.app/GWLCustomPiker";
+			};
+			name = Debug;
+		};
+		AD9D8CB01B2B191800CD1B0B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = GWLCustomPikerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GWLCustomPiker.app/GWLCustomPiker";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AD9D8C831B2B191800CD1B0B /* Build configuration list for PBXProject "GWLCustomPiker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD9D8CA91B2B191800CD1B0B /* Debug */,
+				AD9D8CAA1B2B191800CD1B0B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AD9D8CAB1B2B191800CD1B0B /* Build configuration list for PBXNativeTarget "GWLCustomPiker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD9D8CAC1B2B191800CD1B0B /* Debug */,
+				AD9D8CAD1B2B191800CD1B0B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AD9D8CAE1B2B191800CD1B0B /* Build configuration list for PBXNativeTarget "GWLCustomPikerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD9D8CAF1B2B191800CD1B0B /* Debug */,
+				AD9D8CB01B2B191800CD1B0B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AD9D8C801B2B191800CD1B0B /* Project object */;
+}
