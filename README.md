@@ -20,7 +20,11 @@ customPikerView.dataSource = ?;
 customPikerView.delegate = ?; 
 ```
 
-![gif1](https://github.com/gaowanli/GWLCustomPiker/blob/master/1.gif)
+## Screenshots
+![png1](https://github.com/gaowanli/GWLCustomPiker/blob/master/Screenshots/1.png)
+![png2](https://github.com/gaowanli/GWLCustomPiker/blob/master/Screenshots/2.png)
+![png3](https://github.com/gaowanli/GWLCustomPiker/blob/master/Screenshots/3.png)
+![png4](https://github.com/gaowanli/GWLCustomPiker/blob/master/Screenshots/4.png)
 
 # License
 
