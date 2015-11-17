@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "GWLCustomPiker"
-  s.version      = "1.0.1"
+  s.version      = “1.0.3”
   s.summary      = "自定义外观的pikcerView，使用方法和UIPikcerView基本一致"
   s.homepage     = "https://github.com/gaowanli/GWLCustomPiker"
   s.license      = "MIT"
