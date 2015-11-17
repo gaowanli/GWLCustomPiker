@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "DemoViewController.h"
+#import "Demo1ViewController.h"
 
 @interface AppDelegate ()
 
@@ -17,7 +18,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
-    DemoViewController *vc = [[DemoViewController alloc]init];
+    self.window.backgroundColor = [UIColor blackColor];
+    Demo1ViewController *vc = [[Demo1ViewController alloc]init];
     self.window.rootViewController = vc;
     [self.window makeKeyAndVisible];
     return YES;

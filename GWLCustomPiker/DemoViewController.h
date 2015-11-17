@@ -11,3 +11,13 @@
 @interface DemoViewController : UIViewController
 
 @end
+
+@interface ProvinceModel : NSObject
+
+@property (nonatomic, copy) NSString *provinceName;
+@property (nonatomic, strong) NSArray *provinceCities;
+
+- (instancetype)initWithDict:(NSDictionary *)dict;
++ (instancetype)provinceModelWithDict:(NSDictionary *)dict;
+
+@end

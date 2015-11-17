@@ -8,100 +8,14 @@
 
 #import "GWLCustomPikerView.h"
 
-@interface UIView (Add)
-
-@property (nonatomic,assign) CGFloat X;
-@property (nonatomic,assign) CGFloat Y;
-@property (nonatomic,assign) CGFloat width;
-@property (nonatomic,assign) CGFloat height;
-@property (nonatomic,assign) CGSize  size;
-@property (nonatomic,assign) CGFloat centerX;
-@property (nonatomic,assign) CGFloat centerY;
-
-@end
-
-@implementation UIView (Add)
-
-- (void)setCenterX:(CGFloat)centerX {
-    CGPoint center = self.center;
-    center.x = centerX;
-    self.center = center;
-}
-
-- (CGFloat)centerX {
-    return self.center.x;
-}
-
-- (void)setCenterY:(CGFloat)centerY {
-    CGPoint center = self.center;
-    center.y = centerY;
-    self.center = center;
-}
-
-- (CGFloat)centerY {
-    return self.center.y;
-}
-
-- (void)setY:(CGFloat)Y {
-    CGRect frameT = self.frame;
-    frameT.origin.y = Y;
-    self.frame = frameT;
-}
-
-- (CGFloat)Y {
-    return self.frame.origin.y;
-}
-
-- (void)setX:(CGFloat)X {
-    CGRect frameT = self.frame;
-    frameT.origin.x = X;
-    self.frame = frameT;
-}
-
-- (CGFloat)X {
-    return self.frame.origin.x;
-}
-
--(void)setWidth:(CGFloat)width {
-    CGRect frameT = self.frame;
-    frameT.size.width = width;
-    self.frame = frameT;
-}
-
-- (CGFloat)width {
-    return self.frame.size.width;
-}
-
-- (void)setHeight:(CGFloat)height {
-    CGRect frameT = self.frame;
-    frameT.size.height = height;
-    self.frame = frameT;
-}
-
-- (CGFloat)height {
-    return self.frame.size.height;
-}
-
-- (void)setSize:(CGSize)size {
-    CGRect frameT = self.frame;
-    frameT.size = size;
-    self.frame = frameT;
-}
-
-- (CGSize)size {
-    return self.frame.size;
-}
-
-@end
-
 @interface GWLPikerItem : NSObject
 
 @property(nonatomic, copy) NSString *title;
 @property(nonatomic, assign) BOOL hightLight;
-
-@end
-
-@implementation GWLPikerItem
+@property (nonatomic, strong) UIColor *itemTextColor;
+@property (nonatomic, strong) UIFont *itemFont;
+@property (nonatomic, strong) UIColor *itemSelectedTextColor;
+@property (nonatomic, strong) UIFont *itemSelectedFont;
 
 @end
 
@@ -113,70 +27,12 @@
 
 @end
 
-@interface GWLCustomPikerCell ()
-
-@property(nonatomic, weak) UILabel *titleLabel;
-
-@end
-
-@implementation GWLCustomPikerCell
-
-+ (instancetype)cellWithTableView:(UITableView *)tableView {
-    static NSString *ID = @"customPikerCell";
-    GWLCustomPikerCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
-    if (cell == nil) {
-        cell = [[GWLCustomPikerCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
-        cell.backgroundColor = [UIColor clearColor];
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    }
-    return cell;
-}
-
-- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
-    if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
-        [self makeCellSubviews];
-    }
-    return self;
-}
-
-- (void)makeCellSubviews {
-    UILabel *titleLabel = [[UILabel alloc]init];
-    titleLabel.font = [UIFont systemFontOfSize:15];
-    titleLabel.textColor = [UIColor lightGrayColor];
-    titleLabel.textAlignment = NSTextAlignmentCenter;
-    self.titleLabel = titleLabel;
-    [self addSubview:titleLabel];
-}
-
-- (void)layoutSubviews {
-    [super layoutSubviews];
-    _titleLabel.width = self.width;
-    _titleLabel.height = self.height;
-}
-
-- (void)setItem:(GWLPikerItem *)item {
-    _item = item;
-    _titleLabel.text = item.title;
-    if (_item.hightLight) {
-        self.titleLabel.textColor = [UIColor whiteColor];
-        self.titleLabel.font = [UIFont systemFontOfSize:22];
-    }else {
-        self.titleLabel.textColor = [UIColor lightGrayColor];
-        self.titleLabel.font = [UIFont systemFontOfSize:15];
-    }
-}
-
-@end
-
-const CGFloat GWLDatePickerViewRow = 5;
 @interface GWLCustomPikerView () <UITableViewDataSource, UITableViewDelegate>
 
-/**工具条*/
 @property (nonatomic, weak) UIView *toolContainerView;
 @property (nonatomic, weak) UIView *toolView;
 @property (nonatomic, weak) UILabel *titleLabel;
 @property (nonatomic, weak) UIButton *titleButton;
-/**指示器*/
 @property (nonatomic, weak) UIView *indicatorView;
 @property (nonatomic, assign) CGFloat cellHeight;
 @property (nonatomic, weak) UIView *tableContainerView;
@@ -189,9 +45,7 @@ const CGFloat GWLDatePickerViewRow = 5;
 @implementation GWLCustomPikerView
 
 - (CGFloat)cellHeight {
-    if (!_cellHeight) {
-        _cellHeight = (NSInteger)(self.tableContainerView.height / GWLDatePickerViewRow);
-    }
+    _cellHeight = (NSInteger)(CGRectGetHeight(self.tableContainerView.bounds) / GWLDatePickerViewRow);
     return _cellHeight;
 }
 
@@ -215,7 +69,7 @@ const CGFloat GWLDatePickerViewRow = 5;
     [self addSubview:toolView];
     
     UILabel *titleLabel = [[UILabel alloc]init];
-    titleLabel.textColor = [UIColor lightGrayColor];
+    titleLabel.textColor = [UIColor redColor];
     titleLabel.font = [UIFont systemFontOfSize:15];
     titleLabel.text = @"请选择";
     self.titleLabel = titleLabel;
@@ -224,7 +78,7 @@ const CGFloat GWLDatePickerViewRow = 5;
     UIButton *titleButton = [[UIButton alloc]init];
     [titleButton setTitle:@"完成" forState:UIControlStateNormal];
     titleButton.titleLabel.font = [UIFont systemFontOfSize:15];
-    [titleButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [titleButton setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
     [titleButton addTarget:self action:@selector(titleButtonDidClick:) forControlEvents:UIControlEventTouchDown];
     self.titleButton = titleButton;
     [toolView addSubview:titleButton];
@@ -240,13 +94,13 @@ const CGFloat GWLDatePickerViewRow = 5;
     self.tableContainerView = tableContainerView;
     [self addSubview:tableContainerView];
     
-    NSInteger tableViewCount = 0;
+    NSInteger tableViewCount = 1;
     if ([self.dataSource respondsToSelector:@selector(numberOfComponentsInCustomPikerView:)]) {
         tableViewCount = [self.dataSource numberOfComponentsInCustomPikerView:self];
     }
     for (NSInteger i = 0; i < tableViewCount; i++) {
         UITableView *tableView = [self tableView];
-        tableView.tag = 999+i;
+        tableView.tag = 999 + i;
         [tableContainerView addSubview:tableView];
         [self.tableViewArray addObject:tableView];
     }
@@ -254,19 +108,19 @@ const CGFloat GWLDatePickerViewRow = 5;
     [self configureDataSource];
     
     UIView *indicatorView = [[UIView alloc]init];
-    indicatorView.backgroundColor = [UIColor blackColor];
+    indicatorView.backgroundColor = [UIColor redColor];
     indicatorView.userInteractionEnabled = NO;
     self.indicatorView = indicatorView;
     [tableContainerView insertSubview:indicatorView atIndex:0];
 }
 
 - (void)configureDataSource {
-    NSInteger tableViewCount = 0;
+    NSInteger tableViewCount = 1;
     if ([self.dataSource respondsToSelector:@selector(numberOfComponentsInCustomPikerView:)]) {
         tableViewCount = [self.dataSource numberOfComponentsInCustomPikerView:self];
     }
     
-    for (NSInteger i = 0; i < tableViewCount; i ++) {
+    for (NSInteger i = 0; i < tableViewCount; i++) {
         NSMutableArray *arrayM = [NSMutableArray array];
         [self.dataSourceArray addObject:arrayM];
         [self dataSourceByTableViewComponent:i];
@@ -280,7 +134,7 @@ const CGFloat GWLDatePickerViewRow = 5;
     }
     
     NSMutableArray *arrayM = [NSMutableArray array];
-    for (NSInteger j = 0; j < tableViewRowsInSection; j ++) {
+    for (NSInteger j = 0; j < tableViewRowsInSection; j++) {
         GWLPikerItem *item = [[GWLPikerItem alloc]init];
         if ([self.dataSource respondsToSelector:@selector(customPickerView:titleForRow:forComponent:)]) {
             item.title = [self.dataSource customPickerView:self titleForRow:j forComponent:component];
@@ -307,30 +161,28 @@ const CGFloat GWLDatePickerViewRow = 5;
     CGFloat toolViewH = 44;
     CGFloat margin = 15;
     
-    _toolContainerView.size = CGSizeMake(self.width, toolViewH+separatorH);
-    _toolView.size = CGSizeMake(_toolContainerView.width, toolViewH);
+    _toolContainerView.frame = CGRectMake(0, 0, CGRectGetWidth(self.bounds), toolViewH + separatorH);
+    _toolView.frame = CGRectMake(0, 0, CGRectGetWidth(_toolContainerView.bounds), toolViewH);
     
-    _titleButton.width = 44;
-    _titleButton.height = _toolView.height;
-    _titleButton.X = _toolView.width - margin - _titleButton.width;
+    CGFloat titleButtonW = 44;
+    _titleButton.frame = CGRectMake(CGRectGetWidth(_toolView.bounds) - margin - titleButtonW, 0, titleButtonW, CGRectGetHeight(_toolView.bounds));
     
-    _titleLabel.X = margin;
-    _titleLabel.size = CGSizeMake(self.width-_titleButton.width-margin*2, _titleButton.height);
+    _titleLabel.frame = CGRectMake(margin, 0, CGRectGetWidth(self.bounds) - CGRectGetWidth(_titleButton.bounds) - margin * 2, CGRectGetHeight(_titleButton.bounds));
     
     CGFloat tableMargin = 20;
     CGFloat tableContainerViewY = CGRectGetMaxY(_toolContainerView.frame) + tableMargin;
-    _tableContainerView.frame =  CGRectMake(margin, tableContainerViewY, self.width-2*margin, self.height-tableContainerViewY-tableMargin);
+    _tableContainerView.frame = CGRectMake(margin, tableContainerViewY,  CGRectGetWidth(self.bounds) - 2 * margin, CGRectGetHeight(self.bounds) - tableContainerViewY - tableMargin);
     NSInteger index = 0;
     NSInteger tableViewCount = self.tableViewArray.count;
-    CGFloat tableViewW = _tableContainerView.width/tableViewCount;
-    NSInteger inset = GWLDatePickerViewRow/2;
+    CGFloat tableViewW = CGRectGetWidth(_tableContainerView.bounds) / tableViewCount;
+    NSInteger inset = GWLDatePickerViewRow * 0.5;
     for (UITableView *tableView in self.tableViewArray) {
-        tableView.frame = CGRectMake(index*tableViewW, 0, tableViewW, _tableContainerView.height);
-        tableView.contentInset = UIEdgeInsetsMake(inset*self.cellHeight, 0, inset*self.cellHeight, 0);
-        tableView.contentOffset = CGPointMake(0, -inset*self.cellHeight);
+        tableView.frame = CGRectMake(index * tableViewW, 0, tableViewW, CGRectGetHeight(_tableContainerView.bounds));
+        tableView.contentInset = UIEdgeInsetsMake(inset * self.cellHeight, 0, inset * self.cellHeight, 0);
+        tableView.contentOffset = CGPointMake(0, -inset * self.cellHeight);
         index++;
     }
-    _indicatorView.frame = CGRectMake(0, inset*self.cellHeight, _tableContainerView.width, self.cellHeight);
+    _indicatorView.frame = CGRectMake(0, inset * self.cellHeight, CGRectGetWidth(_tableContainerView.bounds), self.cellHeight);
 }
 
 #pragma mark - UITableViewDataSource
@@ -388,7 +240,7 @@ const CGFloat GWLDatePickerViewRow = 5;
 - (void)selectCellInCenter:(UIScrollView *)scrollView {
     NSInteger row = [self selectedCellIndex:scrollView];
     CGFloat newOffset = row * self.cellHeight;
-    newOffset -= (self.tableContainerView.height / 2.0 - self.cellHeight / 2.0);
+    newOffset -= (CGRectGetHeight(self.tableContainerView.bounds) * 0.5 - self.cellHeight * 0.5);
     [scrollView setContentOffset:CGPointMake(0.0, newOffset) animated:YES];
 }
 
@@ -396,7 +248,7 @@ const CGFloat GWLDatePickerViewRow = 5;
     CGFloat offset = scrollView.contentOffset.y;
     offset += scrollView.contentInset.top;
     NSInteger mod = (NSInteger)offset % (NSInteger)self.cellHeight;
-    CGFloat newValue = (mod >= self.cellHeight / 2.0) ? offset + (self.cellHeight - mod) : offset - mod;
+    CGFloat newValue = (mod >= self.cellHeight * 0.5) ? offset + (self.cellHeight - mod) : offset - mod;
     NSInteger row = (NSInteger)(newValue / self.cellHeight);
     
     NSArray *dataSourceArrayInSection = self.dataSourceArray[scrollView.tag-999];
@@ -410,6 +262,10 @@ const CGFloat GWLDatePickerViewRow = 5;
     NSArray *itemArray = self.dataSourceArray[component];
     for (NSInteger i = 0;i < itemArray.count;i++) {
         GWLPikerItem *item = (GWLPikerItem *)itemArray[i];
+        item.itemFont = _itemFont;
+        item.itemSelectedFont = _itemSelectedFont;
+        item.itemTextColor = _itemTextColor;
+        item.itemSelectedTextColor = _itemSelectedTextColor;
         item.hightLight = (i == cellIndex);
     }
     UITableView *tableView = self.tableViewArray[component];
@@ -440,6 +296,11 @@ const CGFloat GWLDatePickerViewRow = 5;
     self.titleLabel.text = titleLabelText;
 }
 
+- (void)setTitleLabelFont:(UIFont *)titleLabelFont {
+    _titleLabelFont = titleLabelFont;
+    self.titleLabel.font = titleLabelFont;
+}
+
 - (void)setTitleLabelColor:(UIColor *)titleLabelColor {
     _titleLabelColor = titleLabelColor;
     self.titleLabel.textColor = titleLabelColor;
@@ -455,9 +316,30 @@ const CGFloat GWLDatePickerViewRow = 5;
     [self.titleButton setTitleColor:titleButtonTextColor forState:UIControlStateNormal];
 }
 
+- (void)setTitleButtonFont:(UIFont *)titleButtonFont {
+    _titleButtonFont = titleButtonFont;
+    self.titleButton.titleLabel.font = titleButtonFont;
+}
+
 - (void)setIndicatorColor:(UIColor *)indicatorColor {
     _indicatorColor = indicatorColor;
     [self.indicatorView setBackgroundColor:indicatorColor];
+}
+
+- (void)setItemTextColor:(UIColor *)itemTextColor {
+    _itemTextColor = itemTextColor;
+}
+
+- (void)setItemFont:(UIFont *)itemFont {
+    _itemFont = itemFont;
+}
+
+- (void)setItemSelectedTextColor:(UIColor *)itemSelectedTextColor {
+    _itemSelectedTextColor = itemSelectedTextColor;
+}
+
+- (void)setItemSelectedFont:(UIFont *)itemSelectedFont {
+    _itemSelectedFont = itemSelectedFont;
 }
 
 #pragma mark - events
@@ -477,7 +359,7 @@ const CGFloat GWLDatePickerViewRow = 5;
     }
 }
 
-#pragma mark - Lazy loading
+#pragma mark - getter
 - (NSMutableArray *)tableViewArray {
     if (!_tableViewArray) {
         _tableViewArray = [NSMutableArray array];
@@ -490,6 +372,58 @@ const CGFloat GWLDatePickerViewRow = 5;
         _dataSourceArray = [NSMutableArray array];
     }
     return _dataSourceArray;
+}
+
+@end
+
+@implementation GWLPikerItem
+
+@end
+
+@interface GWLCustomPikerCell ()
+
+@property(nonatomic, weak) UILabel *titleLabel;
+
+@end
+
+@implementation GWLCustomPikerCell
+
++ (instancetype)cellWithTableView:(UITableView *)tableView {
+    static NSString *ID = @"customPikerCell";
+    GWLCustomPikerCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
+    if (cell == nil) {
+        cell = [[GWLCustomPikerCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
+        cell.backgroundColor = [UIColor clearColor];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    }
+    return cell;
+}
+
+- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
+    if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
+        UILabel *titleLabel = [[UILabel alloc]init];
+        titleLabel.textAlignment = NSTextAlignmentCenter;
+        self.titleLabel = titleLabel;
+        [self addSubview:titleLabel];
+    }
+    return self;
+}
+
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    _titleLabel.frame = CGRectMake(0, 0, CGRectGetWidth(self.bounds), CGRectGetHeight(self.bounds));
+}
+
+- (void)setItem:(GWLPikerItem *)item {
+    _item = item;
+    _titleLabel.text = item.title;
+    if (_item.hightLight) {
+        self.titleLabel.font = item.itemSelectedFont ?: [UIFont systemFontOfSize:22];
+        self.titleLabel.textColor = item.itemSelectedTextColor ?: [UIColor whiteColor];
+    }else {
+        self.titleLabel.font = item.itemFont ?: [UIFont systemFontOfSize:15];
+        self.titleLabel.textColor = item.itemTextColor ?: [UIColor lightGrayColor];
+    }
 }
 
 @end

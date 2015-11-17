@@ -7,7 +7,6 @@
 //
 
 #import "DemoViewController.h"
-#import "ProvinceModel.h"
 #import "GWLCustomPikerView.h"
 
 @interface DemoViewController () <GWLCustomPikerViewDataSource, GWLCustomPikerViewDelegate>
@@ -139,6 +138,22 @@
         _citiesData = provinceModelArrayM;
     }
     return _citiesData;
+}
+
+@end
+
+@implementation ProvinceModel
+
+- (instancetype)initWithDict:(NSDictionary *)dict {
+    if (self = [super init]) {
+        _provinceName = dict[@"name"];
+        _provinceCities = dict[@"cities"];
+    }
+    return self;
+}
+
++ (instancetype)provinceModelWithDict:(NSDictionary *)dict {
+    return [[self alloc]initWithDict:dict];
 }
 
 @end
