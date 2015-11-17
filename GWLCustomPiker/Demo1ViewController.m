@@ -18,7 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     GWLCustomPikerView *customPikerView  = [[GWLCustomPikerView alloc]init];
-    customPikerView.frame = CGRectMake(0, 100, self.view.bounds.size.width, 320);
+    customPikerView.frame = CGRectMake(0, 100, self.view.bounds.size.width, 220);
     
     customPikerView.dataSource = self;
     customPikerView.delegate = self;
