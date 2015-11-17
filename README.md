@@ -5,8 +5,6 @@
 * iOS 7.0+
 * Xcode 6+
 
-
-![gif1](https://github.com/gaowanli/GWLCustomPiker/blob/master/1.gif)
 ## Installation
 
 ### CocoaPods 
@@ -19,14 +17,10 @@ import 'GWLCustomPiker.h'
 GWLCustomPikerView *customPikerView  = [[GWLCustomPikerView alloc]init];
 customPikerView.frame = ?;
 customPikerView.dataSource = ?;
-customPikerView.delegate = ?;
-customPikerView.titleLabelText = ?;
-customPikerView.titleLabelColor = ?;
-customPikerView.titleButtonText = ?";
-customPikerView.titleButtonTextColor = ?;
-customPikerView.indicatorColor = ?;
-[self.view addSubview:customPikerView];
+customPikerView.delegate = ?; 
 ```
+
+![gif1](https://github.com/gaowanli/GWLCustomPiker/blob/master/1.gif)
 
 # License
 
